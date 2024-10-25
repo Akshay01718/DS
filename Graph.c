@@ -8,7 +8,7 @@ void DFS(int i)
     int j;
     visited[i] = 1;
     printf("%d->", i);
-    for (j = 1; j <= V; j++)
+    for (j = 1; j <= V+1; j++)
     {
         if (G[i][j] == 1 && visited[j] == 0)
         {
@@ -63,7 +63,7 @@ void BFS(int s)
     while (f != -1)
     {
         s = dequeue();
-        for (i = 1; i <= V; i++)
+        for (i = 1; i <= V+1; i++)
         {
             if (G[s][i] == 1 && visited[i] == 0)
             {
@@ -81,9 +81,9 @@ void main()
     printf("\t\t\tGraphs\n");
     printf("Enter the number of vertices : ");
     scanf("%d", &V);
-    for (i = 1; i <= V; i++)
+    for (i = 1; i <= V+1; i++)
     {
-        for (j = 1; j <= V; j++)
+        for (j = 1; j <= V+1; j++)
         {
             G[i][j] = 0;
         }
@@ -99,15 +99,15 @@ void main()
         G[v2][v1] = 1;
     }
     printf("The Adjacency Matrix is : \n");
-    for (i = 1; i <= V; i++)
+    for (i = 1; i <= V+1; i++)
     {
-        for (j = 1; j <= V; j++)
+        for (j = 1; j <= V+1; j++)
         {
             printf("%d\t", G[i][j]);
         }
         printf("\n");
     }
-    for (i = 1; i <= V; i++)
+    for (i = 1; i <= V+1; i++)
     {
         visited[i] = 0;
     }
@@ -116,7 +116,7 @@ void main()
     printf("DFS Traversal is: ");
     DFS(source);
     printf("\n");
-    for (i = 1; i <= V; i++)
+    for (i = 1; i <= V+1; i++)
     {
         visited[i] = 0;
     }
